@@ -10,16 +10,20 @@ const Produto = db.sequelize.define('produto',{
     nome: {
         type: db.Sequelize.TEXT
     },
+    un_medida:{
+        type: db.Sequelize.TEXT
+    },
     preco:{
         type: db.Sequelize.DECIMAL(10,2)
     },
     fk_tipo:{
         type:db.Sequelize.INTEGER,
-        references:{model: 'Tipo_produto', key:'id_tipo'},
+        references:{model: 'tipo_produto', key:'id_tipo'},
         onDelete: 'CASCADE',
         allowNull: false,
     }
 }, {freezeTableName: true});
 
-Produto.sync({force:true});
+Produto.sync({force:true})
 module.exports = Produto;
+

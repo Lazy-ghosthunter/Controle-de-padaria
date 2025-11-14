@@ -10,18 +10,18 @@ const Venda = db.sequelize.define(
     },
     data_Venda: {
       type: "TIMESTAMP",
-      defaultValue: Sequelize.literal("CURRENT_TIMESTAMP"),
+      defaultValue: db.Sequelize.literal("CURRENT_TIMESTAMP"),
       allowNull: false,
     },
     fk_responsavel: {
       type: db.Sequelize.INTEGER,
-      references: { model: "Funcionario", key: "cpf_funcionario" },
+      references: { model: "funcionario", key: "cpf_funcionario" },
       onDelete: "CASCADE",
       allowNull: false,
     },
     fk_tipoPagamento: {
       type: db.Sequelize.INTEGER,
-      references: { model: "Pagamento", key: "id_tipoPag" },
+      references: { model: "Pagamento", key: "id_tipo" },
       onDelete: "CASCADE",
       allowNull: false,
     },
@@ -29,5 +29,4 @@ const Venda = db.sequelize.define(
   { freezeTableName: true }
 );
 
-Venda.sync({ force: true });
 module.exports = Venda;

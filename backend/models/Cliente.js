@@ -11,7 +11,7 @@ const Cliente = db.sequelize.define('cliente',{
     },
     fk_endereco:{
         type:db.Sequelize.INTEGER,
-        references:{model: 'Endereco', key:'id_endereco'},
+        references:{model: 'endereco', key:'id_Endereco'},
         onDelete: 'CASCADE',
         allowNull: false,
     },
@@ -27,5 +27,4 @@ const Cliente = db.sequelize.define('cliente',{
 
 }, {freezeTableName: true});
 
-Cliente.sync({force:true});
 module.exports = Cliente;

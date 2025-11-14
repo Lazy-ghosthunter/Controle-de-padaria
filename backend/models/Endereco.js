@@ -18,13 +18,13 @@ const Endereco = db.sequelize.define('endereco',{
     },
     fk_Bairro:{
         type:db.Sequelize.INTEGER,
-        references:{model: 'Bairro', key:'id_bairro'},
+        references:{model: 'bairro', key:'id_Bairro'},
         onDelete: 'CASCADE',
         allowNull: false,
     },
     fk_Cidade:{
         type:db.Sequelize.INTEGER,
-        references:{model: 'Cidade', key:'id_Cidade'},
+        references:{model: 'cidade', key:'id_Cidade'},
         onDelete: 'CASCADE',
         allowNull: false,
     },
@@ -37,7 +37,6 @@ const Endereco = db.sequelize.define('endereco',{
 
 }, {freezeTableName: true});
 
-Endereco.sync({force:true});
 module.exports = Endereco;
 
 /*

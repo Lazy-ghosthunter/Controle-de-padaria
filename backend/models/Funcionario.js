@@ -11,11 +11,10 @@ const Funcionario = db.sequelize.define('funcionario',{
     },
     fk_cargo:{
         type:db.Sequelize.INTEGER,
-        references:{model: 'Cargo', key:'id_cargo'},
+        references:{model: 'cargo', key:'id_cargo'},
         onDelete: 'CASCADE',
         allowNull: false,
     }
 }, {freezeTableName: true});
 
-Funcionario.sync({force:true});
 module.exports = Funcionario;

@@ -13,5 +13,4 @@ const Bairro = db.sequelize.define('bairro',{
 
 }, {freezeTableName: true});
 
-Bairro.sync({force:true});
 module.exports = Bairro;
