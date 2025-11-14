@@ -29,4 +29,4 @@ const Item_venda = db.sequelize.define(
 );
 
 Item_venda.sync({ force: true });
-Module.exports = Item_venda;
+module.exports = Item_venda;
