@@ -28,4 +28,4 @@ const Cliente = db.sequelize.define('cliente',{
 }, {freezeTableName: true});
 
 Cliente.sync({force:true});
-Module.exports = Cliente;
+module.exports = Cliente;

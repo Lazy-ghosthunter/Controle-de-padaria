@@ -14,4 +14,4 @@ const Cidade = db.sequelize.define('cidade',{
 }, {freezeTableName: true});
 
 Cidade.sync({force:true});
-Module.exports = Cidade;
+module.exports = Cidade;

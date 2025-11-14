@@ -22,4 +22,4 @@ const Produto = db.sequelize.define('produto',{
 }, {freezeTableName: true});
 
 Produto.sync({force:true});
-Module.exports = Produto;
+module.exports = Produto;

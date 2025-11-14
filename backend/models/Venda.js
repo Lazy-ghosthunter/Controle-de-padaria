@@ -30,4 +30,4 @@ const Venda = db.sequelize.define(
 );
 
 Venda.sync({ force: true });
-Module.exports = Venda;
+module.exports = Venda;

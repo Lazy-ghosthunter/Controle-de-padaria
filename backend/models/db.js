@@ -6,7 +6,7 @@ const sequelize = new Sequelize('Padaria','root','root',{
     dialect:'mysql'
 });
 
-Module.exports = {
+module.exports = {
     Sequelize: Sequelize,
     sequelize: sequelize
 }

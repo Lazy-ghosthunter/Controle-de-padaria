@@ -38,7 +38,7 @@ const Endereco = db.sequelize.define('endereco',{
 }, {freezeTableName: true});
 
 Endereco.sync({force:true});
-Module.exports = Endereco;
+module.exports = Endereco;
 
 /*
 id_endereco

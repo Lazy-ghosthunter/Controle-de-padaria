@@ -18,4 +18,4 @@ const Funcionario = db.sequelize.define('funcionario',{
 }, {freezeTableName: true});
 
 Funcionario.sync({force:true});
-Module.exports = Funcionario;
+module.exports = Funcionario;
