@@ -28,5 +28,5 @@ const Item_venda = db.sequelize.define(
   { freezeTableName: true }
 );
 
-Venda.sync({ force: true });
-Module.exports = Venda;
+Item_venda.sync({ force: true });
+Module.exports = Item_venda;
