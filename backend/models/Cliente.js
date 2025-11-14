@@ -1,7 +1,7 @@
 const db = require('./db');
-const Produto = db.sequelize.define('produto',{
+const Cliente = db.sequelize.define('cliente',{
 
-    cod_produto:{
+    cod_cliente:{
         type: db.Sequelize.INTEGER,
         autoIncrement: true,
         allowNull:false,
@@ -10,19 +10,17 @@ const Produto = db.sequelize.define('produto',{
     nome: {
         type: db.Sequelize.TEXT
     },
-    preco:{
-        type: db.Sequelize.DECIMAL(10,2)
-    },
-    quantidade:{
-        type: db.Sequelize.INTEGER
-    },
-    fk_tipo:{
+    fk_endereco:{
         type:db.Sequelize.INTEGER,
-        references:{model: 'Tipo_produto', key:'id_tipo'},
+        references:{model: 'Endereco', key:'id_endereco'},
         onDelete: 'CASCADE',
         allowNull: false,
+    },
+    credito:{
+        type: db.Sequelize.DECIMAL(10,2)
     }
+
 }, {freezeTableName: true});
 
-Produto.sync({force:true});
-Module.exports = Produto;
+Cliente.sync({force:true});
+Module.exports = Cliente;
