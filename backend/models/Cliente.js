@@ -13,7 +13,7 @@ const Cliente = db.sequelize.define('cliente',{
         type:db.Sequelize.INTEGER,
         references:{model: 'endereco', key:'id_Endereco'},
         onDelete: 'CASCADE',
-        allowNull: false,
+        allowNull: true,
     },
     status:{
         type:db.Sequelize.INTEGER,

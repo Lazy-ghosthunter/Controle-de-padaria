@@ -1,3 +1,90 @@
+:root{
+  /* Torta de Amora (berry pie) theme */
+  --bg: #fff6fb; /* very pale berry */
+  --muted: #6b4063; /* muted plum for text */
+  --card: #fffafc; /* creamy card bg */
+  --accent: linear-gradient(90deg,#b33a85,#8f2a66); /* primary berry gradient */
+  --accent-solid: #b33a85; /* fallback solid accent */
+  --accent-soft: #f3d7ef; /* light berry for highlights */
+  --shadow: 0 8px 22px rgba(139,46,99,0.08);
+}
+*{box-sizing:border-box}
+body{ margin:0; font-family: 'Poppins', Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:var(--muted) }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.app-root{ min-height:100vh; display:flex; flex-direction:column }
+.app-main{ padding:28px; max-width:1100px; margin:22px auto; width:100% }
+.page h2{ margin:6px 0 14px; font-weight:700; color:#3d1738 }
+.hero{ background:linear-gradient(90deg,#ffe9f6,#fff0fb); padding:28px; border-radius:14px }
+.cards{ display:flex; gap:14px; margin-top:18px }
+.card{ background:var(--card); padding:18px; border-radius:14px; box-shadow:var(--shadow); flex:1; border:1px solid rgba(179,58,133,0.06) }
+.card-link{ display:flex; flex-direction:column; text-decoration:none; color:inherit }
+.card-link:hover{ transform:translateY(-6px); box-shadow:0 18px 36px rgba(139,46,99,0.12) }
+.simple-form{ display:flex; gap:8px; margin-bottom:12px }
+.simple-form input{ padding:10px 12px; border-radius:12px; border:1px solid rgba(0,0,0,0.06); background:linear-gradient(180deg,#fff,#fffafc) }
+.simple-form button{ padding:10px 14px; background:var(--accent-solid); color:#fff; border:none; border-radius:12px; box-shadow:0 8px 18px rgba(179,58,133,0.12) }
+.simple-form select{ padding:10px 12px; border-radius:10px; border:1px solid rgba(0,0,0,0.04); background:var(--accent-soft) }
+.form-row{ display:flex; gap:10px; margin-bottom:10px }
+.form-row input{ flex:1 }
+.form-row .small{ width:160px }
+
+/* Clients form specific layout: stack rows and center the form */
+.clients-form{ display:flex; flex-direction:column; gap:12px; max-width:760px; margin:10px auto 18px; align-items:stretch; padding:12px }
+.clients-form .form-row{ gap:10px }
+.clients-form .form-row input{ flex:1 }
+.clients-form .form-row .small{ width:160px }
+.clients-form .form-row select{ min-width:160px }
+.clients-form button{ align-self:flex-end }
+
+/* Reusable button variants */
+.btn{ padding:8px 12px; border-radius:12px; border:none; background:var(--accent-solid); color:#fff; cursor:pointer; font-size:0.95rem; box-shadow:0 8px 20px rgba(179,58,133,0.10); transition:transform .12s ease, box-shadow .12s ease }
+.btn.small{ padding:6px 8px; font-size:0.85rem }
+.btn.ghost{ background:transparent; color:var(--muted); border:1px solid rgba(139,46,99,0.08); box-shadow:none }
+.btn.danger{ background:#d25b6b; color:#fff }
+.btn:disabled{ opacity:0.6; cursor:not-allowed }
+.btn:hover{ transform:translateY(-3px); box-shadow:0 18px 36px rgba(139,46,99,0.14) }
+
+/* Make table action buttons visually separated */
+.list button{ margin-right:6px }
+.list table{ width:100%; border-collapse:collapse }
+.list th,.list td{ text-align:left; padding:8px; border-bottom:1px solid #eee }
+
+.products-list{ display:flex; gap:8px; flex-wrap:wrap }
+.product-card{ background:var(--card); padding:14px; border-radius:14px; width:160px; box-shadow:var(--shadow); display:flex; flex-direction:column; gap:10px; border:1px solid rgba(139,46,99,0.04) }
+.product-card button{ margin-top:auto; background:var(--accent-solid); color:#fff; border:none; padding:8px; border-radius:10px }
+
+/* Page background for editing/adding screens: padaria image with soft lilac overlay */
+/* remove strong purple overlay for pages that used bg-padaria */
+.page.bg-padaria{ position:relative; overflow:hidden }
+.page.bg-padaria::after{ content:''; position:absolute; inset:0; background: transparent; z-index:1 }
+.page.bg-padaria > *{ position:relative; z-index:2 }
+
+/* translucent blurred panel for forms */
+.form-panel{ background: rgba(255,255,255,0.86); backdrop-filter: none; -webkit-backdrop-filter: none; border-radius:12px; padding:14px; border:1px solid rgba(0,0,0,0.04); box-shadow:0 8px 20px rgba(0,0,0,0.04); margin: 12px auto }
+
+/* Home split layout */
+.home-split{ display:flex; gap:18px; align-items:stretch }
+.home-split .left{ flex:1; }
+.home-split .right{ flex:1; border-radius:14px; overflow:hidden; position:relative }
+.home-split .right.image-half{ min-height:320px; background-position:center; background-size:cover; }
+.home-split .right::after{ content:''; position:absolute; inset:0; background: transparent; mix-blend-mode: overlay }
+
+/* centered home container */
+.home-center{ max-width:920px; margin:30px auto; display:flex; flex-direction:column; align-items:center }
+.home-center .cards{ justify-content:center }
+.hero{ padding:28px; border-radius:14px; background: linear-gradient(180deg,#ffffff,#fffafc); }
+
+@media (max-width: 900px){
+  .home-split{ flex-direction:column }
+  .home-split .right.image-half{ min-height:220px }
+}
+
+.sales-grid{ display:flex; gap:16px }
+.items-list{ margin:8px 0 }
+.item-row{ display:flex; gap:8px; align-items:center }
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',

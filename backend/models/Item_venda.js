@@ -28,4 +28,5 @@ const Item_venda = db.sequelize.define(
   { freezeTableName: true }
 );
 
+
   module.exports = Item_venda;

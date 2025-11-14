@@ -1,3 +1,14 @@
+.App-logo{ display:none }
+.app-main{ min-height:60vh }
+
+.page{ background:transparent }
+
+/* small responsive */
+@media (max-width:800px){
+  .sales-grid{ flex-direction:column }
+  .cards{ flex-direction:column }
+  .product-card{ width:100% }
+}
 .App {
   text-align: center;
 }

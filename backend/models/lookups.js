@@ -19,7 +19,7 @@ const UF = db.sequelize.define(
 
 //! tipos de produto --------------------------------------------------
 const Tipo_produto = db.sequelize.define(
-  "tipo_Produto",
+  "tipo_produto",
   {
     id_tipo: {
       type: db.Sequelize.INTEGER,
