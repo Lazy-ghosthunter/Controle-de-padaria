@@ -1,9 +1,8 @@
 const db = require('./db');
 const Cliente = db.sequelize.define('cliente',{
 
-    cod_cliente:{
+    cpf_cliente:{
         type: db.Sequelize.INTEGER,
-        autoIncrement: true,
         allowNull:false,
         primaryKey:true
     },
@@ -13,6 +12,12 @@ const Cliente = db.sequelize.define('cliente',{
     fk_endereco:{
         type:db.Sequelize.INTEGER,
         references:{model: 'Endereco', key:'id_endereco'},
+        onDelete: 'CASCADE',
+        allowNull: false,
+    },
+    status:{
+        type:db.Sequelize.INTEGER,
+        references:{model: 'Status', key:'id_status'},
         onDelete: 'CASCADE',
         allowNull: false,
     },

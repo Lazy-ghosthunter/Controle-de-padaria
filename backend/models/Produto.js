@@ -13,9 +13,6 @@ const Produto = db.sequelize.define('produto',{
     preco:{
         type: db.Sequelize.DECIMAL(10,2)
     },
-    quantidade:{
-        type: db.Sequelize.INTEGER
-    },
     fk_tipo:{
         type:db.Sequelize.INTEGER,
         references:{model: 'Tipo_produto', key:'id_tipo'},

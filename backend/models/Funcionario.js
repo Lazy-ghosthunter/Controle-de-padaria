@@ -1,9 +1,8 @@
 const db = require('./db');
 const Funcionario = db.sequelize.define('funcionario',{
 
-    cod_funcionario:{
+    cpf_funcionario:{
         type: db.Sequelize.INTEGER,
-        autoIncrement: true,
         allowNull:false,
         primaryKey:true
     },

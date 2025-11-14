@@ -1,5 +1,5 @@
 const db = require('./db');
-const Endereco = db.sequelize.define('e ndereco',{
+const Endereco = db.sequelize.define('endereco',{
 
     id_Endereco:{
         type: db.Sequelize.INTEGER,
